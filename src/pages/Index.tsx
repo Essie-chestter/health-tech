@@ -1,5 +1,5 @@
-
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -10,9 +10,19 @@ import { NotificationSettings } from "@/components/NotificationSettings";
 import { ReminderDashboard } from "@/components/ReminderDashboard";
 import { NavigationDropdown } from "@/components/NavigationDropdown";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { UserMenu } from "@/components/UserMenu";
+import { useAuth } from "@/contexts/AuthContext";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("dashboard");
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!user) {
+      navigate("/auth");
+    }
+  }, [user, navigate]);
 
   // Mock data for demonstration
   const stats = {
@@ -185,6 +195,10 @@ const Index = () => {
     }
   };
 
+  if (!user) {
+    return null;
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white dark:from-slate-900 dark:to-slate-800">
       {/* Header */}
@@ -205,6 +219,7 @@ const Index = () => {
                 System Active
               </Badge>
               <ThemeToggle />
+              <UserMenu />
             </div>
           </div>
         </div>
