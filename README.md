@@ -1,73 +1,103 @@
-# Welcome to your Lovable project
+# Health-Tech Application
 
-## Project info
+## Description
 
-**URL**: https://lovable.dev/projects/c39796d1-5993-4946-8480-241700a04b74
+ The application leverages React for the frontend, Vite for fast development, and Supabase (PostgreSQL)for backend services including authentication and database management. It is designed to provide a robust and scalable foundation for health-related applications.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- **User Authentication**: Secure user login and registration powered by Supabase Auth.
+- **Protected Routes**: Ensures that only authenticated users can access certain parts of the application.
+- **Theming**: Customizable UI themes using `ThemeProvider`.
+- **Interactive UI Components**: Built with `shadcn-ui` and `Radix UI` for a rich user experience.
+- **Data Management**: Utilizes `@tanstack/react-query` for efficient data fetching, caching, and state management.
+- **Routing**: Client-side routing handled by `react-router-dom`.
 
-**Use Lovable**
+## Technologies Used
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c39796d1-5993-4946-8480-241700a04b74) and start prompting.
+- **Frontend**: React.js, TypeScript, Vite
+- **UI Library**: shadcn-ui, Radix UI
+- **Styling**: Tailwind CSS, PostCSS
+- **Backend/Database**: Supabase [PostgreSQL](Authentication, Database)
+- **State Management/Data Fetching**: @tanstack/react-query, React Hook Form
+- **Routing**: React Router DOM
+- **Utility Libraries**: clsx, lucide-react, tailwind-merge, zod
 
-Changes made via Lovable will be committed automatically to this repo.
+## Installation
 
-**Use your preferred IDE**
+To get a local copy up and running, follow these simple steps.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Prerequisites
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- Node.js (LTS version recommended)
+- npm or Yarn (npm is used in the examples)
+- Git
 
-Follow these steps:
+### Setup
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1.  **Clone the repository**:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+    ```bash
+    git clone https://github.com/Essie-chestter/health-tech.git
+    ```
 
-# Step 3: Install the necessary dependencies.
-npm i
+2.  **Navigate to the project directory**:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+    ```bash
+    cd health-tech
+    ```
 
-**Edit a file directly in GitHub**
+3.  **Install dependencies**:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+    ```bash
+    npm install
+    # or yarn install
+    ```
 
-**Use GitHub Codespaces**
+4.  **Set up Supabase**: 
+    - Create a new project on [Supabase](https://supabase.com/).
+    - Obtain your Supabase URL and `anon` public key from your project settings (Settings -> API).
+    - Create a `.env` file in the root of your project and add the following:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+    ```
+    VITE_SUPABASE_URL=YOUR_SUPABASE_URL
+    VITE_SUPABASE_ANON_KEY=YOUR_SUPABASE_ANON_KEY
+    ```
 
-## What technologies are used for this project?
+5.  **Run the development server**:
 
-This project is built with:
+    ```bash
+    npm run dev
+    # or yarn dev
+    ```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+    The application will be accessible at `http://localhost:5173` (or another port if 5173 is in use).
 
-## How can I deploy this project?
+## Usage
 
-Simply open [Lovable](https://lovable.dev/projects/c39796d1-5993-4946-8480-241700a04b74) and click on Share -> Publish.
+Once the application is running, you can:
 
-## Can I connect a custom domain to my Lovable project?
+- Register a new user or log in with existing credentials via the `/auth` route.
+- Access protected content after successful authentication.
+- Explore the various UI components and features implemented.
 
-Yes, you can!
+## Contributing
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Contact
+
+Essie-chestter - [GitHub Profile](https://github.com/Essie-chestter)
+
+Project Link: [https://github.com/Essie-chestter/health-tech](https://github.com/Essie-chestter/health-tech)
+
